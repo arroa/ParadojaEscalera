@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paradoja de la escalera</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>Paradoja de la escalera</h1>
+      <p class="subtitle">
+        Ajusta los parámetros y pulsa <strong>Run!</strong> para comparar la longitud de la
+        escalera frente a la hipotenusa.
+      </p>
+
+      <section class="controls" aria-label="Controles de simulación">
+        <label for="baseRange">Base (unidad de cada cateto): <output id="baseValue">20</output></label>
+        <input id="baseRange" type="range" min="8" max="40" value="20" step="1" />
+
+        <label for="stepsRange">Saltos (cantidad de escalones): <output id="stepsValue">8</output></label>
+        <input id="stepsRange" type="range" min="1" max="30" value="8" step="1" />
+
+        <label for="speedRange">Velocidad (ms por tramo): <output id="speedValue">120</output></label>
+        <input id="speedRange" type="range" min="40" max="500" value="120" step="10" />
+
+        <button id="runButton" type="button">Run!</button>
+      </section>
+
+      <section class="board">
+        <canvas id="scene" width="900" height="520" aria-label="Visualización de la paradoja"></canvas>
+      </section>
+
+      <section class="metrics" aria-live="polite">
+        <p>Catetos totales: <span id="legsValue">160</span></p>
+        <p>Longitud escalera (2 · base · saltos): <span id="stairsLenValue">320</span></p>
+        <p>Longitud hipotenusa ideal: <span id="hypLenValue">226.27</span></p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
